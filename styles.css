@@ -1,0 +1,165 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #7D8CA3;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(51,51,51,0.75);
+  width: 50vw;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+
+#grid {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 100px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "."
+    "."
+    ".";
+}
+
+
+#toggle_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.toggle {
+  position: absolute;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .onoff {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  background-color: #333;
+  transition: 0.4s;
+  width: 90px;
+  height: 50px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  transition: 0.4s;
+  top: 10px;
+  left: 10px;
+}
+
+input:checked + .slider {
+  background-color: #fd5d00;
+
+}
+
+input:checked + .slider:before {
+  transform: translateX(40px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+.slider.round::before {
+  border-radius: 20px;
+}
+
+#abbrv_div{
+/* display: flex; */
+margin: 0 auto;
+margin-bottom: 12px;
+}
+
+textarea{
+  margin: 10px;
+  resize: none;
+}
+
+
+#abbrvbtn {
+  display: flex;
+  justify-self: center;
+  background: #F49390;
+  border: 1px solid #F49390;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  height: 50px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 110px;
+  text-align:center;
+}
+
+#abbrvbtn:hover,
+#abbrvbtn:active {
+  background-color: #333;
+  background-position: 0 0;
+  color: #F49390;
+}
+
+#abbrvbtn:active {
+  opacity: .5;
+}
+
+@media only screen and (max-width:380px){
+  #grid{
+    gap: 50px 0px;
+  }
+  header h1{
+    font-size: 20px;
+  }
+  header p{
+    font-size: 15px;
+  }
+}
